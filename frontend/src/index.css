@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("/hero.png");
+}
+
+.shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+    background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.error-page--content::before {
+    background: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0.5) 0,
+            rgba(0, 0, 0, 0.2) 45%,
+            rgba(0, 0, 0, 0.1) 55%,
+            transparent 70%);
+    bottom: -10vw;
+    content: "";
+    left: 10vw;
+    position: absolute;
+    right: 10vw;
+    top: -10vw;
+    z-index: -1;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4b5563;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1a202c;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+body {
+    @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.linear-bg {
+    background: linear-gradient(269.82deg, #07091c00 0.17%, #080a1ad6 99.87%);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.hoveres {
+    @apply hidden;
+}
+
+.hovered:hover .hoveres {
+    @apply flex-colo;
+}
+
+.flex-colo {
+    @apply flex flex-col justify-center items-center;
+}
+
+.flex-rows {
+    @apply flex flex-row justify-center items-center;
+}
+
+.flex-btn {
+    @apply flex justify-center items-center;
+}
+
+.transitions {
+    @apply transition duration-300 ease-in;
+}
+
+.zIndex {
+    z-index: 1000;
+}
